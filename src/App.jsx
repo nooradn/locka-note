@@ -1,10 +1,19 @@
 function App() {
+  const textComponents = [];
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  )
+  for (let i = 0; i < 7; i++) {
+    textComponents.push(<Text key={i} />);
+  }
+
+  return <>{textComponents}</>;
 }
 
-export default App
+function Text() {
+  return (
+    <>
+      <h1>Simple Looping</h1>
+    </>
+  );
+}
+
+export default App;
