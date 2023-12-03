@@ -1,11 +1,9 @@
 function App() {
-  const textComponents = [];
-
-  for (let i = 0; i < 7; i++) {
-    textComponents.push(<Text key={i} />);
-  }
-
-  return <>{textComponents}</>;
+  return (
+    <>
+      <p className="display-1">Hello</p>
+    </>
+  );
 }
 
 function Text() {
