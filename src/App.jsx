@@ -1,17 +1,15 @@
+import React from "react";
+
 function App() {
   return (
     <>
-      <p className="display-1">Hello</p>
+      <Greet />
     </>
   );
 }
 
-function Text() {
-  return (
-    <>
-      <h1>Simple Looping</h1>
-    </>
-  );
+function Greet() {
+  return <p>Hello world!</p>;
 }
 
 export default App;

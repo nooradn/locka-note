@@ -2,9 +2,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// Import Boootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 // Import main react file
 import App from './App.jsx'
 
