@@ -1,19 +1,23 @@
 import React from "react";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
 
-function NoteItem({ title, date, content }) {
+function NoteItem({ title, date, content, isArchived }) {
+  
+  const prepareDate = new Date(date);
+  const humanReadableDate = prepareDate.toLocaleString()
+  
   return (
     <>
       <Card
         w={300}
-        h={400}
+        h={350}
         p={5}
         boxShadow="lg"
         outline="1px solid rgba(153, 143, 255, 0.25)"
       >
         <Heading size="md">{title}</Heading>
         <Text marginBlock={1} fontSize="xs" color="purple.500">
-          {date}
+          {humanReadableDate}
         </Text>
         <Text marginBlock={1} fontSize="sm">
           {content}

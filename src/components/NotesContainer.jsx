@@ -4,12 +4,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import React from "react";
-import { getInitialData } from "../initial-data.js";
 import NoteLists from "./NotesLists.jsx";
-
-
-const initNotes = getInitialData()
-console.log(initNotes)
 
 function SavedNotes() {
   return (
