@@ -1,19 +1,14 @@
-import { AbsoluteCenter, Box } from "@chakra-ui/react";
 import React from "react";
-import { Editable, EditablePreview, EditableTextarea } from "@chakra-ui/react";
+import PageHeader from "./components/PageHeader.jsx";
+import CreateNoteForm from "./components/CreateForm.jsx";
 
 function App() {
   return (
     <>
-      <p>Jojo</p>
-      <Editable defaultValue="Take some chakra">
-        <EditablePreview />
-        <EditableTextarea />
-      </Editable>
+      <PageHeader />
+      <CreateNoteForm />
     </>
   );
 }
-
-function Jojo() {}
 
 export default App;
