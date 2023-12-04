@@ -1,3 +1,4 @@
+import { AddIcon } from "@chakra-ui/icons";
 import {
   Button,
   Center,
@@ -14,7 +15,7 @@ function CreateNoteForm() {
   return (
     <Center>
       <FormControl maxW={550} m={30}>
-        <Heading mb={3} size="lg">
+        <Heading mt={50} mb={3} size="lg">
           Create Note
         </Heading>
         <Input type="text" placeholder="Title" mb={3} size="lg" />
@@ -27,7 +28,10 @@ function CreateNoteForm() {
         />
         <Flex>
           <Spacer />
-          <Button colorScheme="purple">Add note</Button>
+          <Button colorScheme="purple">
+            <AddIcon mr={3} />
+            Add note
+          </Button>
         </Flex>
       </FormControl>
     </Center>
