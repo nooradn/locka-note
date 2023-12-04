@@ -1,14 +1,16 @@
 import React from "react";
 import PageHeader from "./components/PageHeader.jsx";
-import CreateNoteForm from "./components/CreateForm.jsx";
-import SavedNotes from './components/NotesContainer.jsx';
+import CreateNoteForm from "./components/contents/CreateNoteForm.jsx";
+import SavedNotes from "./components/contents/NotesContainer.jsx";
+import PageFooter from "./components/PageFooter.jsx";
 
 function App() {
   return (
     <>
-      <PageHeader /> 
+      <PageHeader />
       <CreateNoteForm />
-      <SavedNotes/>
+      <SavedNotes />
+      <PageFooter />
     </>
   );
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
 
-function NoteItem({ title, date, content, isArchived }) {
-  
+function NoteItem({ id, title, date, content, isArchived }) {
+  // Make date as human readable
   const prepareDate = new Date(date);
-  const humanReadableDate = prepareDate.toLocaleString()
-  
+  const humanReadableDate = prepareDate.toLocaleString();
+
+  // Return note item card
   return (
     <>
       <Card
@@ -25,6 +26,7 @@ function NoteItem({ title, date, content, isArchived }) {
         <Spacer />
         <Flex>
           <Spacer />
+          {/* TOOD: Dispatch trigger with note ID */}
           <Button colorScheme="red" size="sm" variant="outline">
             Delete
           </Button>
@@ -33,7 +35,5 @@ function NoteItem({ title, date, content, isArchived }) {
     </>
   );
 }
-
-
 
 export default NoteItem;

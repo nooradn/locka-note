@@ -28,8 +28,11 @@ function CreateNoteForm() {
         />
         <Flex>
           <Spacer />
-          <Button colorScheme="purple">
-            <AddIcon mr={3} />
+          <Button
+            colorScheme="purple"
+            leftIcon={<AddIcon />}
+            onClick={() => console.log("Clicked!")}
+          >
             Add note
           </Button>
         </Flex>

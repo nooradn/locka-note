@@ -1,8 +1,4 @@
-import {
-  Grid,
-  Heading,
-  Center,
-} from "@chakra-ui/react";
+import { Grid, Heading, Center } from "@chakra-ui/react";
 import React from "react";
 import NoteLists from "./NotesLists.jsx";
 
@@ -18,6 +14,7 @@ function SavedNotes() {
         <Grid
           mx={50}
           my={5}
+          // Make it responsive using Chakra UI layout
           templateColumns={{
             xl: "repeat(4, 1fr)",
             lg: "repeat(3, 1fr)",
@@ -26,8 +23,8 @@ function SavedNotes() {
           }}
           gap={9}
         >
-          <NoteLists/>
-
+          {/* Root of Notes List */}
+          <NoteLists />
         </Grid>
       </Center>
     </>
