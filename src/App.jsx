@@ -5,7 +5,7 @@ import CreateNoteForm from "./components/CreateForm.jsx";
 function App() {
   return (
     <>
-      <PageHeader />
+      <PageHeader /> 
       <CreateNoteForm />
     </>
   );
