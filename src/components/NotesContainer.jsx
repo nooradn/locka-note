@@ -4,7 +4,12 @@ import {
   Center,
 } from "@chakra-ui/react";
 import React from "react";
-import { NotesItem } from "./NotesItem";
+import { getInitialData } from "../initial-data.js";
+import NoteLists from "./NotesLists.jsx";
+
+
+const initNotes = getInitialData()
+console.log(initNotes)
 
 function SavedNotes() {
   return (
@@ -26,16 +31,8 @@ function SavedNotes() {
           }}
           gap={9}
         >
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
-          <NotesItem />
+          <NoteLists/>
+
         </Grid>
       </Center>
     </>
