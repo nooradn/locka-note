@@ -1,6 +1,7 @@
 import allNotesData from "../allNotesData";
 
 function addNoteEH(formData) {
+  
   const noteID = allNotesData[allNotesData.length - 1].id + 1;
   const newNoteData = {
     id: noteID,
