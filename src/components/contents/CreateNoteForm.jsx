@@ -1,3 +1,5 @@
+import React from "react";
+import { useState } from "react";
 import { AddIcon } from "@chakra-ui/icons";
 import {
   Button,
@@ -9,8 +11,8 @@ import {
   Flex,
   Spacer,
 } from "@chakra-ui/react";
-import React from "react";
-import { useState } from "react";
+import "../events/AddNoteEH.jsx";
+import AddNoteEH from "../events/AddNoteEH.jsx";
 
 function CreateNoteForm() {
   const [formData, setForm] = useState({
@@ -18,15 +20,16 @@ function CreateNoteForm() {
     content: "",
   });
 
-  const handleInput = (e) => {
+  const handleInputOnChange = (e) => {
     setForm({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmitForm = (e) => {
-    console.log(formData);
+  const handleOnSubmitForm = () => {
+    AddNoteEH(formData);
+    console.log('clicked submit form')
   };
 
   return (
@@ -42,7 +45,7 @@ function CreateNoteForm() {
           mb={3}
           size="lg"
           value={formData.title}
-          onChange={handleInput}
+          onChange={handleInputOnChange}
         />
         <Textarea
           name="content"
@@ -52,14 +55,14 @@ function CreateNoteForm() {
           h={150}
           size="sm"
           value={formData.content}
-          onChange={handleInput}
+          onChange={handleInputOnChange}
         />
         <Flex>
           <Spacer />
           <Button
             colorScheme="purple"
             leftIcon={<AddIcon />}
-            onClick={handleSubmitForm}
+            onClick={handleOnSubmitForm}
           >
             Add note
           </Button>
