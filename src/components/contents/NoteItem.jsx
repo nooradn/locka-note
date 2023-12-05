@@ -12,7 +12,7 @@ function NoteItem({ id, title, date, content, isArchived }) {
   return (
     <>
       <Card
-        w={300}
+        w={330}
         h={350}
         p={5}
         boxShadow="lg"
