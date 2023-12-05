@@ -6,6 +6,8 @@ function NoteItem({ id, title, date, content, isArchived }) {
   const prepareDate = new Date(date);
   const humanReadableDate = prepareDate.toLocaleString();
 
+  let isLoading = id % 2 == 0 ? true : false;
+
   // Return note item card
   return (
     <>
@@ -26,8 +28,14 @@ function NoteItem({ id, title, date, content, isArchived }) {
         <Spacer />
         <Flex>
           <Spacer />
-          {/* TOOD: Dispatch trigger with note ID */}
-          <Button colorScheme="red" size="sm" variant="outline">
+          <Button
+            isLoading={isLoading}
+            colorScheme="red"
+            size="sm"
+            variant="outline"
+            // TOOD: Dispatch trigger with note ID
+            onClick={() => console.log("NoteID:", id)}
+          >
             Delete
           </Button>
         </Flex>

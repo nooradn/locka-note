@@ -12,7 +12,14 @@ function PageHeader() {
         <Heading size="md">NotaNote</Heading>
       </Flex>
       <Spacer />
-      <Button size='sm'>About Us</Button>
+      <Button
+        size="sm"
+        onClick={() =>
+          alert("Created by Noor Adn \nUsing Vite + React.js + Chakra UI")
+        }
+      >
+        About Us
+      </Button>
     </Flex>
   );
 }

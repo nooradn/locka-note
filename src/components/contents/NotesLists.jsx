@@ -14,6 +14,7 @@ function NoteLists() {
       {newNotesData.map(({ id, title, body, createdAt, archived }) => (
         <NoteItem
           key={id}
+          id={id}
           title={title}
           date={createdAt}
           content={body}
