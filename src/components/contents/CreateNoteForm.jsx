@@ -11,8 +11,8 @@ import {
   Flex,
   Spacer,
 } from "@chakra-ui/react";
-import "../events/AddNoteEH.jsx";
-import AddNoteEH from "../events/AddNoteEH.jsx";
+import "../../events/addNoteEH.js";
+import addNoteEH from "../../events/addNoteEH.js";
 
 function CreateNoteForm() {
   const [formData, setForm] = useState({
@@ -28,7 +28,7 @@ function CreateNoteForm() {
   };
 
   const handleOnSubmitForm = () => {
-    AddNoteEH(formData);
+    addNoteEH(formData);
     console.log('clicked submit form')
   };
 

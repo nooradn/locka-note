@@ -1,6 +1,6 @@
 import React from "react";
 import NoteItem from "./NoteItem.jsx";
-import allNotesData from "../NotesData.jsx";
+import allNotesData from "../../allNotesData.js";
 
 function NoteLists() {
   return (

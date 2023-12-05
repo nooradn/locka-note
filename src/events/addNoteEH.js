@@ -1,6 +1,6 @@
-import allNotesData from "../NotesData";
+import allNotesData from "../allNotesData";
 
-function AddNoteEH(formData) {
+function addNoteEH(formData) {
   const noteID = allNotesData[allNotesData.length - 1].id + 1;
   const newNoteData = {
     id: noteID,
@@ -14,4 +14,4 @@ function AddNoteEH(formData) {
   console.log(allNotesData);
 }
 
-export default AddNoteEH;
+export default addNoteEH;
