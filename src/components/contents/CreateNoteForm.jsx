@@ -14,7 +14,7 @@ import {
 import "../../events/addNoteEH.js";
 import addNoteEH from "../../events/addNoteEH.js";
 
-function CreateNoteForm() {
+const CreateNoteForm = () => {
   const [formData, setForm] = useState({
     title: "",
     content: "",
@@ -29,7 +29,7 @@ function CreateNoteForm() {
 
   const handleOnSubmitForm = () => {
     addNoteEH(formData);
-    console.log('clicked submit form')
+    console.log("clicked submit form");
   };
 
   return (
@@ -70,6 +70,6 @@ function CreateNoteForm() {
       </FormControl>
     </Center>
   );
-}
+};
 
 export default CreateNoteForm;

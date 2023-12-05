@@ -1,7 +1,8 @@
 import React from "react";
 
-function PageFooter() {
+const PageFooter = () => {
   return <></>;
 }
 
 export default PageFooter;
+

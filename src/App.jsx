@@ -4,7 +4,7 @@ import CreateNoteForm from "./components/contents/CreateNoteForm.jsx";
 import SavedNotes from "./components/contents/NotesContainer.jsx";
 import PageFooter from "./components/PageFooter.jsx";
 
-function App() {
+const App = () => {
   return (
     <>
       <PageHeader />

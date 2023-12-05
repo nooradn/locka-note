@@ -1,7 +1,3 @@
-
-
-function addNoteEH(formData) {
-  
-}
+const addNoteEH = (formData) => {};
 
 export default addNoteEH;

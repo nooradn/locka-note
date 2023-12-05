@@ -3,7 +3,7 @@ import NoteItem from "./NoteItem.jsx";
 import allNotesData from "../../allNotesData.js";
 import { useState } from "react";
 
-function NoteLists(formData) {
+const NoteLists = (formData) => {
   const [notes, setNotes] = useState(allNotesData);
 
   const noteID = notes[notes.length - 1].id + 1;

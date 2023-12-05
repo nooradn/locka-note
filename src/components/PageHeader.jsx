@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Spacer, Heading, Button, Center } from "@chakra-ui/react";
 import { MoonIcon } from "@chakra-ui/icons";
 
-function PageHeader() {
+const PageHeader = () => {
   return (
     <Flex m={3} minWidth="max-content" alignItems="center" gap="2">
       <Flex p="2">

@@ -2,7 +2,7 @@ import { Grid, Heading, Center } from "@chakra-ui/react";
 import React from "react";
 import NoteLists from "./NotesLists.jsx";
 
-function SavedNotes() {
+const SavedNotes = () => {
   return (
     <>
       <Center>

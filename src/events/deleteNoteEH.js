@@ -1,0 +1,3 @@
+const deleteNoteEH = () => {
+    return null
+}

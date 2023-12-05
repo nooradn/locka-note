@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
 
-function NoteItem({ id, title, date, content, isArchived }) {
+const NoteItem = ({ id, title, date, content, isArchived }) => {
   // Make date as human readable
   const prepareDate = new Date(date);
   const humanReadableDate = prepareDate.toLocaleString();
