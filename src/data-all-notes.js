@@ -1,5 +1,5 @@
 // Add the initial notes
-import { getInitialData } from "./initial-data.js";
+import { getInitialData } from "./data-initial.js";
 const initNotes = getInitialData();
 
 // New notes data & merge it with initial notes

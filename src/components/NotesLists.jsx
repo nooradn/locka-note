@@ -1,6 +1,6 @@
 import React from "react";
 import NoteItem from "./NoteItem.jsx";
-import allNotesData from "../../allNotesData.js";
+import allNotesData from "../data-all-notes.js";
 import { useState } from "react";
 
 const NoteLists = (formData) => {
