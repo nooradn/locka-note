@@ -1,6 +1,7 @@
 import { Grid, Heading, Center } from "@chakra-ui/react";
 import React from "react";
-import NoteLists from "./NotesLists.jsx";
+import allNotesData from "../data-all-notes.js";
+import NoteItem from "./NoteItem.jsx";
 
 const NotesGrid = () => {
   return (
@@ -14,7 +15,7 @@ const NotesGrid = () => {
         <Grid
           mx={50}
           my={5}
-          // Make it responsive using Chakra UI layout
+          // Make it responsive
           templateColumns={{
             xl: "repeat(4, 1fr)",
             lg: "repeat(3, 1fr)",
@@ -23,12 +24,23 @@ const NotesGrid = () => {
           }}
           gap={9}
         >
-          {/* Root of Notes List */}
-          <NoteLists />
+          {
+            // Map all data for each note
+            allNotesData.map(({ id, title, body, createdAt, archived }) => (
+              <NoteItem
+                key={id}
+                id={id}
+                title={title}
+                date={createdAt}
+                content={body}
+                isArchived={archived}
+              />
+            ))
+          }
         </Grid>
       </Center>
     </>
   );
-}
+};
 
 export default NotesGrid;

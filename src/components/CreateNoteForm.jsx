@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import allNotesData from "../data-all-notes.js";
 
-// Stateful component
+// Stateful component or class component
 class CreateNoteForm extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +27,7 @@ class CreateNoteForm extends React.Component {
     };
   }
 
+  // Handler when typing or form changed
   handleInputOnChange = (e) => {
     this.setState({
       formData: {
@@ -36,9 +37,8 @@ class CreateNoteForm extends React.Component {
     });
   };
 
+  // Handler when clicked submit or 'Add note' button
   handleOnSubmitForm = () => {
-    console.log("clicked submit form");
-
     let uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
     let uniqueNowTime = new Date().toISOString();
 
@@ -52,13 +52,14 @@ class CreateNoteForm extends React.Component {
         },
       }),
       () => {
-        console.log(this.state.formData);
-        console.log("current total id", uniqueNoteID);
         allNotesData.push(this.state.formData);
+        console.log("new data", this.state.formData);
+        console.log("all data", allNotesData);
       }
     );
   };
 
+  // Render the UI
   render() {
     return (
       <Center>
