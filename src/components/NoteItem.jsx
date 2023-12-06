@@ -2,7 +2,7 @@ import React from "react";
 import { showFormattedDate } from "../data-initial.js";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
 
-const NoteItem = ({ id, title, date, content, isArchived }) => {
+const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
   // Return note item card
   return (
     <Card
@@ -27,7 +27,10 @@ const NoteItem = ({ id, title, date, content, isArchived }) => {
           size="sm"
           variant="outline"
           // TOOD: Dispatch trigger with note ID
-          onClick={() => console.log("clicked delete with noteID:", id)}
+          onClick={() => {
+            console.log("clicked delete with noteID:", id);
+            onClickEvent();
+          }}
         >
           Delete
         </Button>

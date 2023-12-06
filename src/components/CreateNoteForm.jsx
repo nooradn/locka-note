@@ -11,6 +11,8 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import allNotesData from "../data-all-notes.js";
+import NotesGrid, { displayyyyyyy } from "./NotesGrid.jsx";
+// import { updateNote } from "./NotesGrid.jsx";
 
 // Stateful component or class component
 class CreateNoteForm extends React.Component {
@@ -55,6 +57,10 @@ class CreateNoteForm extends React.Component {
         allNotesData.push(this.state.formData);
         console.log("new data", this.state.formData);
         console.log("all data", allNotesData);
+        displayyyyyyy() ;
+        // updateDisplay()
+        // super.
+        // updateNote();
       }
     );
   };
