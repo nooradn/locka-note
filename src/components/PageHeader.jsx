@@ -1,16 +1,11 @@
 import React from "react";
 import { Flex, Spacer, Heading, Button, Center } from "@chakra-ui/react";
-import { MoonIcon } from "@chakra-ui/icons";
+import LogoIcon from "./LogoIcon";
 
 const PageHeader = () => {
   return (
     <Flex m={3} minWidth="max-content" alignItems="center" gap="2">
-      <Flex p="2">
-        <Center>
-          <MoonIcon mr={2} color={"purple.400"} />
-        </Center>
-        <Heading size="md">NotaNote</Heading>
-      </Flex>
+      <LogoIcon />
       <Spacer />
       <Button
         size="sm"
@@ -22,6 +17,6 @@ const PageHeader = () => {
       </Button>
     </Flex>
   );
-}
+};
 
 export default PageHeader;
