@@ -4,10 +4,10 @@ import LogoIcon from "./LogoIcon";
 
 const PageFooter = () => {
   return (
-    <Center bg="purple.900" h={300} >
+    <Center bg="purple.900" h={250} mt='5rem' >
       <Spacer />
       <VStack>
-        <LogoIcon textColor="white" scale={2} />
+        <LogoIcon textColor="white" scale={1.5} isVertical={true}/>
         <Text color="purple.500" fontSize="sm" mt={4}>
           All Rights Reserved
         </Text>

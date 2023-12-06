@@ -2,15 +2,14 @@ import React from "react";
 import { Heading, Center } from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
 
-const LogoIcon = ({ textColor, scale }) => {
-  const scaleIcon = {
-    transform: `scale(${scale})`,
-  };
+const LogoIcon = ({ textColor, scale, isVertical }) => {
+  const scaleIcon = { transform: `scale(${scale})` };
+  const columnMode = isVertical ? { flexDirection: "column" } : null;
 
   return (
-    <Center style={scaleIcon} paddingInline={3}>
+    <Center style={{ ...scaleIcon, ...columnMode }} paddingInline={3}>
       <Center>
-        <LockIcon mr={2} color={"purple.400"} boxSize='1.3em' />
+        <LockIcon mr={2} color={"purple.400"} boxSize="1.7em" m={1} />
       </Center>
       <Heading size="md" color={textColor}>
         LockaNote
