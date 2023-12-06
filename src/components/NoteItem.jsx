@@ -1,13 +1,8 @@
 import React from "react";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
+import { showFormattedDate } from "../data-initial.js";
 
 const NoteItem = ({ id, title, date, content, isArchived }) => {
-  // Make date as human readable
-  const prepareDate = new Date(date);
-  const humanReadableDate = prepareDate.toLocaleString();
-
-  let isLoading = id % 2 == 0 ? true : false;
-
   // Return note item card
   return (
     <>
@@ -20,7 +15,7 @@ const NoteItem = ({ id, title, date, content, isArchived }) => {
       >
         <Heading size="md">{title}</Heading>
         <Text marginBlock={1} fontSize="xs" color="purple.500">
-          {humanReadableDate}
+          {showFormattedDate(date)}
         </Text>
         <Text marginBlock={1} fontSize="sm">
           {content}
@@ -29,7 +24,6 @@ const NoteItem = ({ id, title, date, content, isArchived }) => {
         <Flex>
           <Spacer />
           <Button
-            isLoading={isLoading}
             colorScheme="red"
             size="sm"
             variant="outline"
@@ -42,6 +36,6 @@ const NoteItem = ({ id, title, date, content, isArchived }) => {
       </Card>
     </>
   );
-}
+};
 
 export default NoteItem;
