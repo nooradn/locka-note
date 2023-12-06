@@ -2,7 +2,7 @@ import { Grid, Heading, Center } from "@chakra-ui/react";
 import React from "react";
 import NoteLists from "./NotesLists.jsx";
 
-const SavedNotes = () => {
+const NotesGrid = () => {
   return (
     <>
       <Center>
@@ -31,4 +31,4 @@ const SavedNotes = () => {
   );
 }
 
-export default SavedNotes;
+export default NotesGrid;

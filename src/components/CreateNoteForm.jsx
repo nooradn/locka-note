@@ -10,6 +10,7 @@ import {
   Flex,
   Spacer,
 } from "@chakra-ui/react";
+import allNotesData from "../data-all-notes.js";
 
 // Stateful component
 class CreateNoteForm extends React.Component {
@@ -17,8 +18,11 @@ class CreateNoteForm extends React.Component {
     super(props);
     this.state = {
       formData: {
+        id: 0,
         title: "",
-        content: "",
+        body: "",
+        archived: false,
+        createdAt: "",
       },
     };
   }
@@ -34,8 +38,25 @@ class CreateNoteForm extends React.Component {
 
   handleOnSubmitForm = () => {
     console.log("clicked submit form");
-    console.log(this.state.formData);
 
+    let uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
+    let uniqueNowTime = new Date().toISOString();
+
+    this.setState(
+      (prevState) => ({
+        formData: {
+          ...prevState.formData, // contains title, body
+          archived: false,
+          id: uniqueNoteID,
+          createdAt: uniqueNowTime,
+        },
+      }),
+      () => {
+        console.log(this.state.formData);
+        console.log("current total id", uniqueNoteID);
+        allNotesData.push(this.state.formData);
+      }
+    );
   };
 
   render() {
@@ -55,7 +76,7 @@ class CreateNoteForm extends React.Component {
             onChange={this.handleInputOnChange}
           />
           <Textarea
-            name="content"
+            name="body"
             type="text"
             placeholder="Note here"
             mb={3}
