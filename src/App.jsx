@@ -1,16 +1,13 @@
 import React from "react";
 import PageHeader from "./components/PageHeader.jsx";
-import CreateNoteForm from "./components/CreateNoteForm.jsx";
-import NotesGrid from "./components/NotesGrid.jsx";
 import PageFooter from "./components/PageFooter.jsx";
+import PageMain from './components/PageMain';
 
 const App = () => {
   return (
     <>
       <PageHeader />
-      {/* <PageMain /> */}
-        <CreateNoteForm />
-        <NotesGrid />
+      <PageMain/>
       <PageFooter />
     </>
   );
