@@ -11,6 +11,7 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
+// Stateful component
 class CreateNoteForm extends React.Component {
   constructor(props) {
     super(props);
