@@ -8,8 +8,9 @@ const App = () => {
   return (
     <>
       <PageHeader />
-      <CreateNoteForm />
-      <NotesGrid />
+      {/* <PageMain /> */}
+        <CreateNoteForm />
+        <NotesGrid />
       <PageFooter />
     </>
   );

@@ -16,6 +16,10 @@ class NotesGrid extends React.Component {
     console.log("clicked updateNote");
   };
 
+  get updateDisplay() {
+    return console.log("clicked updateDisplay"), this.updateNote();
+  }
+
   // Render the UI
   render() {
     return (
@@ -64,7 +68,7 @@ class NotesGrid extends React.Component {
 }
 
 export const displayyyyyyy = () => {
-  NotesGrid.updateNote;
+  NotesGrid.updateDisplay;
 };
 
 export default NotesGrid;

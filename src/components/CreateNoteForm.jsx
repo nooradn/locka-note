@@ -57,7 +57,7 @@ class CreateNoteForm extends React.Component {
         allNotesData.push(this.state.formData);
         console.log("new data", this.state.formData);
         console.log("all data", allNotesData);
-        displayyyyyyy() ;
+        displayyyyyyy()
         // updateDisplay()
         // super.
         // updateNote();
