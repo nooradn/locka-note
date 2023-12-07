@@ -10,6 +10,8 @@ import {
   Flex,
   Spacer,
   Text,
+  HStack,
+  VStack,
 } from "@chakra-ui/react";
 import allNotesData from "../data-all-notes.js";
 
@@ -26,18 +28,27 @@ class CreateNoteForm extends React.Component {
         archived: false,
         createdAt: "",
       },
+      charLeft: 50,
     };
   }
 
   // Handler when typing or form changed
   handleInputOnChange = (e) => {
-    this.setState({
-      isNotEmpty: this.props.isNotEmpty,
-      formData: {
-        ...this.state.formData,
-        [e.target.name]: e.target.value,
-      },
-    });
+    if (e.target.value.length <= 50) {
+      this.setState({
+        isNotEmpty: this.props.isNotEmpty,
+        formData: {
+          ...this.state.formData,
+          [e.target.name]: e.target.value,
+        },
+      });
+
+      // Prevent for giving title for max 50 chars
+      if (e.target.value.length <= 50) {
+        this.setState({charLeft : 50 - e.target.value.length})
+      }
+      console.log("charleft", this.state.charLeft);
+    }
   };
 
   // Handler when clicked submit or 'Add note' button
@@ -54,7 +65,7 @@ class CreateNoteForm extends React.Component {
     let uniqueNowTime = new Date().toISOString();
 
     // this.setState({ isNotEmpty: true });
-    console.log(this.state.isNotEmpty, "in handler craeteform");  
+    console.log(this.state.isNotEmpty, "in handler craeteform");
 
     // Prepare form data
     this.setState(
@@ -71,8 +82,6 @@ class CreateNoteForm extends React.Component {
       () => {
         if (this.state.formData.title || this.state.formData.body) {
           allNotesData.push(this.state.formData);
-          // console.log("new data", this.state.formData);
-          // console.log("all data", allNotesData);
           updateSharedNoteState();
           this.isAlertShowed = false;
         } else {
@@ -88,9 +97,17 @@ class CreateNoteForm extends React.Component {
     return (
       <Center>
         <FormControl maxW={550} m={30}>
-          <Heading mt={50} mb={3} size="lg">
-            Create Note
-          </Heading>
+          <HStack>
+            <Heading mt={50} mb={3} size="lg">
+              Create Note
+            </Heading>
+            <Spacer />
+            <Center pt={45}>
+              <Text fontSize="xs" align="center" justifyContent="center">
+                Char left: {this.state.charLeft}
+              </Text>
+            </Center>
+          </HStack>
           <Input
             name="title"
             type="text"
