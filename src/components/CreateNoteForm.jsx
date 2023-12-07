@@ -41,7 +41,15 @@ class CreateNoteForm extends React.Component {
   // Handler when clicked submit or 'Add note' button
   handleOnSubmitForm = () => {
     const updateSharedNoteState = this.props.updateSharedNoteState;
-    let uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
+
+    let uniqueNoteID;
+
+    if (allNotesData.length > 0) {
+      uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
+    } else {
+      uniqueNoteID = 1
+    }
+
     let uniqueNowTime = new Date().toISOString();
 
     this.setState(
@@ -55,7 +63,6 @@ class CreateNoteForm extends React.Component {
       }),
       () => {
         if (this.state.formData.title || this.state.formData.body) {
-          console.log("ada judul dan catatannya coy");
           allNotesData.push(this.state.formData);
           // console.log("new data", this.state.formData);
           console.log("all data", allNotesData);

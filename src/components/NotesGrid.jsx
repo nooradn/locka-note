@@ -12,14 +12,19 @@ class NotesGrid extends React.Component {
   // Render the UI
   render() {
     const sharedNoteState = this.props.sharedNoteState;
+
     const updateSharedNoteState = () => {
-      if (sharedNoteState.length <= 0){
-        this.setState({headerGird: 'No notes yet ❌'})
+      if (sharedNoteState.length <= 0) {
+        this.setState({ headerGird: "No notes yet ❌" });
+        console.log('shared notes length',sharedNoteState.length)
       }
-      if (!sharedNoteState.length <= 0){
-        this.setState({headerGird: '📕 Saved Notes'})
+      if (sharedNoteState.length > 0) {
+        this.setState({ headerGird: "📕 Saved Notes" });
       }
+      console.log('shared notes length',sharedNoteState.length)
       this.props.updateSharedNoteState();
+      console.log('after updatesharednotestate' )
+
     };
 
     return (
