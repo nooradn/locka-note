@@ -1,8 +1,17 @@
 import React from "react";
 import { showFormattedDate } from "../data-initial.js";
 import { Card, Heading, Text, Spacer, Button, Flex } from "@chakra-ui/react";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import allNotesData from "./../data-all-notes";
 
 const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
+  const deleteObjWithID = (idToDelete) => {
+    const indexToDelete = allNotesData.findIndex(
+      (obj) => obj.id === idToDelete
+    );
+    allNotesData.splice(indexToDelete, 1);
+  };
+
   // Return note item card
   return (
     <Card
@@ -23,16 +32,30 @@ const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
         </Text>
         <Spacer />
         <Button
+          marginInline={1}
+          colorScheme="purple"
+          size="xs"
+          variant="outline"
+          // TOOD: Dispatch trigger with note ID
+          onClick={() => {
+            console.log("clicked archive with noteID:", id);
+            onClickEvent();
+          }}
+        >
+          <CheckIcon />
+        </Button>
+        <Button
           colorScheme="red"
-          size="sm"
+          size="xs"
           variant="outline"
           // TOOD: Dispatch trigger with note ID
           onClick={() => {
             console.log("clicked delete with noteID:", id);
+            deleteObjWithID(id);
             onClickEvent();
           }}
         >
-          Delete
+          <CloseIcon />
         </Button>
       </Flex>
     </Card>

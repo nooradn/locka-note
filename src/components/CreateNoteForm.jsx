@@ -60,9 +60,9 @@ class CreateNoteForm extends React.Component {
           // console.log("new data", this.state.formData);
           console.log("all data", allNotesData);
           updateSharedNoteState();
-          this.isAlertShowed = false
+          this.isAlertShowed = false;
         } else {
-          this.isAlertShowed = true
+          this.isAlertShowed = true;
           updateSharedNoteState();
         }
       }
@@ -98,7 +98,9 @@ class CreateNoteForm extends React.Component {
           />
           <Flex>
             <Center>
-              <Text color='red' paddingInline={1} hidden={!this.isAlertShowed}>Please fill any title/note first</Text>
+              <Text color="red" paddingInline={1} hidden={!this.isAlertShowed}>
+                Please fill any title/note first...
+              </Text>
             </Center>
             <Spacer />
             <Button

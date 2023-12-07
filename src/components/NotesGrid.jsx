@@ -23,7 +23,7 @@ class NotesGrid extends React.Component {
               xl: "repeat(4, 1fr)",
               lg: "repeat(3, 1fr)",
               md: "repeat(2, 1fr)",
-              sm: "repeat(1, 1fr)", 
+              sm: "repeat(1, 1fr)",
             }}
             gap={9}
           >
@@ -39,7 +39,6 @@ class NotesGrid extends React.Component {
                     content={body}
                     isArchived={archived}
                     onClickEvent={() => {
-                      // TODO: DELETE NOTE WITH ID
                       updateSharedNoteState();
                     }}
                   />
