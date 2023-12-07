@@ -1,7 +1,6 @@
 import { Grid, Heading, Center, VStack, Text } from "@chakra-ui/react";
 import React from "react";
 import NoteItem from "./NoteItem.jsx";
-import allNotesData from "./../data-all-notes";
 
 class NotesGrid extends React.Component {
   constructor(props) {
@@ -19,8 +18,6 @@ class NotesGrid extends React.Component {
       this.setState({ isNotEmpty: false });
     }
     this.props.updateSharedNoteState();
-    // console.log(this.state.isNotEmpty)
-    // console.log(this.state.sharedNoteState)
   };
 
   // Render the UI

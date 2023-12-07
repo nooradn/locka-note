@@ -2,7 +2,6 @@ import React from "react";
 import {
   Flex,
   Spacer,
-  Heading,
   Button,
   Center,
   Input,
@@ -21,10 +20,9 @@ const PageHeader = () => {
         <InputGroup>
           <Input size="md" w={250} placeholder="Search note..."></Input>
           <InputRightElement>
-          <Button size='sm' mr={1}>
-            <Search2Icon />
-
-          </Button>
+            <Button size="sm" mr={1}>
+              <Search2Icon />
+            </Button>
           </InputRightElement>
         </InputGroup>
       </Center>

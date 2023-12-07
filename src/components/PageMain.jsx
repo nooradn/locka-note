@@ -34,12 +34,4 @@ class PageMain extends React.Component {
   }
 }
 
-// const doddy = () => {
-//   console.log("Jojo clicked");
-//   () => {
-//     PageMain.updateDisplay();
-//   };
-// };
-
-// export { doddy };
 export default PageMain;

@@ -4,14 +4,15 @@ import LogoIcon from "./LogoIcon";
 
 const PageFooter = () => {
   return (
-    <Center bg="purple.900" h={250} mt='5rem' >
+    <Center bg="purple.900" h={250} mt="5rem">
       <Spacer />
       <VStack>
-        <LogoIcon textColor="white" scale={1.5} isVertical={true}/>
-        <Text color='rgba(255, 255, 255, 0.5)' mt={4}>
-        Created by Noor Adn Using Vite + React.js + Chakra UI
+        <LogoIcon textColor="white" scale={1.5} isVertical={true} />
+        <Text color="rgba(255, 255, 255, 0.5)" mt={4} textAlign="center">
+          Created by Noor Adn
+          <br /> Vite + React.js + Chakra UI
         </Text>
-        <Text color="purple.500" fontSize="sm" >
+        <Text color="purple.500" fontSize="sm">
           All Rights Reserved
         </Text>
       </VStack>

@@ -1,11 +1,11 @@
 Index.html
   => Start.jsx
     => App.jsx
-        -> PageHeader
-            - LogoIcon
-        -> PageMain
-            - CreateNoteForm
-            - NotesGrid
-        -> PageFooter
-            - LogoIcon
+        -> PageHeader.jsx
+            - LogoIcon.jsx
+        -> PageMain.jsx
+            - CreateNoteForm.jsx
+            - NotesGrid.jsx
+        -> PageFooter.jsx
+            - LogoIcon.jsx
         

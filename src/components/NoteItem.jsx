@@ -5,6 +5,7 @@ import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import allNotesData from "./../data-all-notes";
 
 const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
+  // Delete note function
   const deleteObjWithID = (idToDelete) => {
     const indexToDelete = allNotesData.findIndex(
       (obj) => obj.id === idToDelete
@@ -36,8 +37,8 @@ const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
           colorScheme="purple"
           size="xs"
           variant="outline"
-          // TOOD: Dispatch trigger with note ID
           onClick={() => {
+            // TOOD: Dispatch trigger with note ID
             console.log("archived noteID:", id);
             onClickEvent();
           }}
@@ -48,9 +49,7 @@ const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
           colorScheme="red"
           size="xs"
           variant="outline"
-          // TOOD: Dispatch trigger with note ID
           onClick={() => {
-            // console.log("deleted noteID:", id);
             deleteObjWithID(id);
             onClickEvent();
           }}

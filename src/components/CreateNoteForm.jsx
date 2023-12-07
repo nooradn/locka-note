@@ -11,7 +11,6 @@ import {
   Spacer,
   Text,
   HStack,
-  VStack,
 } from "@chakra-ui/react";
 import allNotesData from "../data-all-notes.js";
 
