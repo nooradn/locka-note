@@ -18,17 +18,19 @@ class PageMain extends React.Component {
 
   render() {
     return (
-      <>
+
+        <>
         <CreateNoteForm
-          sharedNoteState={this.state.sharedNoteState}
-          updateSharedNoteState={this.updateSharedNoteState}
+        sharedNoteState={this.state.sharedNoteState}
+        updateSharedNoteState={this.updateSharedNoteState}
         />
         <NotesGrid
-          sharedNoteState={this.state.sharedNoteState}
-          updateSharedNoteState={this.updateSharedNoteState}
+        sharedNoteState={this.state.sharedNoteState}
+        updateSharedNoteState={this.updateSharedNoteState}
         />
-      </>
+        </>
     );
+  
   }
 }
 

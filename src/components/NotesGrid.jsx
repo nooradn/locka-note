@@ -3,15 +3,30 @@ import React from "react";
 import NoteItem from "./NoteItem.jsx";
 
 class NotesGrid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerGird: "📕 Saved Notes",
+    };
+  }
   // Render the UI
   render() {
     const sharedNoteState = this.props.sharedNoteState;
-    const updateSharedNoteState = this.props.updateSharedNoteState;
+    const updateSharedNoteState = () => {
+      if (sharedNoteState.length <= 0){
+        this.setState({headerGird: 'No notes yet ❌'})
+      }
+      if (!sharedNoteState.length <= 0){
+        this.setState({headerGird: '📕 Saved Notes'})
+      }
+      this.props.updateSharedNoteState();
+    };
+
     return (
       <>
         <Center>
           <Heading mt={100} mb={50} marginInline={50} size="lg">
-            📕 Saved Notes
+            {this.state.headerGird}
           </Heading>
         </Center>
         <Center>
