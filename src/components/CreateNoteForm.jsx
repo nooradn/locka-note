@@ -18,6 +18,7 @@ class CreateNoteForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isNotEmpty: this.props.isNotEmpty,
       formData: {
         id: 0,
         title: "",
@@ -31,6 +32,7 @@ class CreateNoteForm extends React.Component {
   // Handler when typing or form changed
   handleInputOnChange = (e) => {
     this.setState({
+      isNotEmpty: this.props.isNotEmpty,
       formData: {
         ...this.state.formData,
         [e.target.name]: e.target.value,
@@ -43,15 +45,18 @@ class CreateNoteForm extends React.Component {
     const updateSharedNoteState = this.props.updateSharedNoteState;
 
     let uniqueNoteID;
-
     if (allNotesData.length > 0) {
       uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
     } else {
-      uniqueNoteID = 1
+      uniqueNoteID = 1;
     }
 
     let uniqueNowTime = new Date().toISOString();
 
+    // this.setState({ isNotEmpty: true });
+    console.log(this.state.isNotEmpty, "in handler craeteform");  
+
+    // Prepare form data
     this.setState(
       (prevState) => ({
         formData: {
@@ -61,11 +66,13 @@ class CreateNoteForm extends React.Component {
           createdAt: uniqueNowTime,
         },
       }),
+
+      // Validation for at least one input is filled
       () => {
         if (this.state.formData.title || this.state.formData.body) {
           allNotesData.push(this.state.formData);
           // console.log("new data", this.state.formData);
-          console.log("all data", allNotesData);
+          // console.log("all data", allNotesData);
           updateSharedNoteState();
           this.isAlertShowed = false;
         } else {

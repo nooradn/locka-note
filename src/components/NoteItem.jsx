@@ -50,7 +50,7 @@ const NoteItem = ({ id, title, date, content, isArchived, onClickEvent }) => {
           variant="outline"
           // TOOD: Dispatch trigger with note ID
           onClick={() => {
-            console.log("deleted noteID:", id);
+            // console.log("deleted noteID:", id);
             deleteObjWithID(id);
             onClickEvent();
           }}

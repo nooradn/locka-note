@@ -8,7 +8,7 @@ class PageMain extends React.Component {
     super(props);
     this.state = {
       sharedNoteState: allNotesData,
-      isNotEmpty: true,
+      isNotEmpty: false,
     };
   }
 
@@ -21,10 +21,12 @@ class PageMain extends React.Component {
       <>
         <CreateNoteForm
           sharedNoteState={this.state.sharedNoteState}
+          isNotEmpty={this.state.isNotEmpty}
           updateSharedNoteState={this.updateSharedNoteState}
         />
         <NotesGrid
           sharedNoteState={this.state.sharedNoteState}
+          isNotEmpty={this.state.isNotEmpty}
           updateSharedNoteState={this.updateSharedNoteState}
         />
       </>

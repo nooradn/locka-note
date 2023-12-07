@@ -7,21 +7,20 @@ class NotesGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNotEmpty: true,
-      sharedNoteState : this.props.sharedNoteState
+      isNotEmpty: this.props.isNotEmpty,
+      sharedNoteState: this.props.sharedNoteState,
     };
   }
 
-
   updateSharedNoteState = () => {
     if (this.state.sharedNoteState.length === 0) {
-      this.setState({ isNotEmpty: false });
-    } else {
       this.setState({ isNotEmpty: true });
+    } else {
+      this.setState({ isNotEmpty: false });
     }
     this.props.updateSharedNoteState();
-    console.log(this.state.isNotEmpty)
-    console.log(this.state.sharedNoteState)
+    // console.log(this.state.isNotEmpty)
+    // console.log(this.state.sharedNoteState)
   };
 
   // Render the UI
@@ -30,10 +29,10 @@ class NotesGrid extends React.Component {
       <>
         <Center>
           <VStack mt={100} mb={50} marginInline={50}>
-            <Heading size="lg" hidden={!this.state.isNotEmpty}>
+            <Heading size="lg" hidden={this.state.isNotEmpty}>
               📕 Saved Notes
             </Heading>
-            <Heading size="lg" hidden={this.state.isNotEmpty}>
+            <Heading size="lg" hidden={!this.state.isNotEmpty}>
               No notes yet ❌
             </Heading>
             <Text>Total notes: {this.state.sharedNoteState.length}</Text>
