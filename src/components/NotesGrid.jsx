@@ -1,38 +1,43 @@
-import { Grid, Heading, Center } from "@chakra-ui/react";
+import { Grid, Heading, Center, VStack, Text } from "@chakra-ui/react";
 import React from "react";
 import NoteItem from "./NoteItem.jsx";
+import allNotesData from "./../data-all-notes";
 
 class NotesGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerGird: "📕 Saved Notes",
+      isNotEmpty: true,
+      sharedNoteState : this.props.sharedNoteState
     };
   }
+
+
+  updateSharedNoteState = () => {
+    if (this.state.sharedNoteState.length === 0) {
+      this.setState({ isNotEmpty: false });
+    } else {
+      this.setState({ isNotEmpty: true });
+    }
+    this.props.updateSharedNoteState();
+    console.log(this.state.isNotEmpty)
+    console.log(this.state.sharedNoteState)
+  };
+
   // Render the UI
   render() {
-    const sharedNoteState = this.props.sharedNoteState;
-
-    const updateSharedNoteState = () => {
-      if (sharedNoteState.length <= 0) {
-        this.setState({ headerGird: "No notes yet ❌" });
-        console.log('shared notes length',sharedNoteState.length)
-      }
-      if (sharedNoteState.length > 0) {
-        this.setState({ headerGird: "📕 Saved Notes" });
-      }
-      console.log('shared notes length',sharedNoteState.length)
-      this.props.updateSharedNoteState();
-      console.log('after updatesharednotestate' )
-
-    };
-
     return (
       <>
         <Center>
-          <Heading mt={100} mb={50} marginInline={50} size="lg">
-            {this.state.headerGird}
-          </Heading>
+          <VStack mt={100} mb={50} marginInline={50}>
+            <Heading size="lg" hidden={!this.state.isNotEmpty}>
+              📕 Saved Notes
+            </Heading>
+            <Heading size="lg" hidden={this.state.isNotEmpty}>
+              No notes yet ❌
+            </Heading>
+            <Text>Total notes: {this.state.sharedNoteState.length}</Text>
+          </VStack>
         </Center>
         <Center>
           <Grid
@@ -49,7 +54,7 @@ class NotesGrid extends React.Component {
           >
             {
               // Map all data for each note
-              sharedNoteState.map(
+              this.state.sharedNoteState.map(
                 ({ id, title, body, createdAt, archived }) => (
                   <NoteItem
                     key={id}
@@ -59,7 +64,7 @@ class NotesGrid extends React.Component {
                     content={body}
                     isArchived={archived}
                     onClickEvent={() => {
-                      updateSharedNoteState();
+                      this.updateSharedNoteState();
                     }}
                   />
                 )
@@ -73,5 +78,3 @@ class NotesGrid extends React.Component {
 }
 
 export default NotesGrid;
-{
-}

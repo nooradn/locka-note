@@ -8,29 +8,27 @@ class PageMain extends React.Component {
     super(props);
     this.state = {
       sharedNoteState: allNotesData,
+      isNotEmpty: true,
     };
   }
 
   updateSharedNoteState = () => {
     this.setState({ sharedNoteState: allNotesData });
-    console.log("updated display");
   };
 
   render() {
     return (
-
-        <>
+      <>
         <CreateNoteForm
-        sharedNoteState={this.state.sharedNoteState}
-        updateSharedNoteState={this.updateSharedNoteState}
+          sharedNoteState={this.state.sharedNoteState}
+          updateSharedNoteState={this.updateSharedNoteState}
         />
         <NotesGrid
-        sharedNoteState={this.state.sharedNoteState}
-        updateSharedNoteState={this.updateSharedNoteState}
+          sharedNoteState={this.state.sharedNoteState}
+          updateSharedNoteState={this.updateSharedNoteState}
         />
-        </>
+      </>
     );
-  
   }
 }
 
