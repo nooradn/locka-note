@@ -1,27 +1,12 @@
 import { Grid, Heading, Center } from "@chakra-ui/react";
 import React from "react";
-import allNotesData from "../data-all-notes.js";
 import NoteItem from "./NoteItem.jsx";
 
 class NotesGrid extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      notesData: allNotesData,
-    };
-  }
-
-  updateNote = () => {
-    this.setState((this.state.notesData = allNotesData));
-    console.log("clicked updateNote");
-  };
-
-  get updateDisplay() {
-    return console.log("clicked updateDisplay"), this.updateNote();
-  }
-
   // Render the UI
   render() {
+    const sharedNoteState = this.props.sharedNoteState;
+    const updateSharedNoteState = this.props.updateSharedNoteState;
     return (
       <>
         <Center>
@@ -38,13 +23,13 @@ class NotesGrid extends React.Component {
               xl: "repeat(4, 1fr)",
               lg: "repeat(3, 1fr)",
               md: "repeat(2, 1fr)",
-              sm: "repeat(1, 1fr)",
+              sm: "repeat(1, 1fr)", 
             }}
             gap={9}
           >
             {
               // Map all data for each note
-              this.state.notesData.map(
+              sharedNoteState.map(
                 ({ id, title, body, createdAt, archived }) => (
                   <NoteItem
                     key={id}
@@ -54,7 +39,8 @@ class NotesGrid extends React.Component {
                     content={body}
                     isArchived={archived}
                     onClickEvent={() => {
-                      this.updateNote();
+                      // TODO: DELETE NOTE WITH ID
+                      updateSharedNoteState();
                     }}
                   />
                 )
@@ -67,8 +53,6 @@ class NotesGrid extends React.Component {
   }
 }
 
-export const displayyyyyyy = () => {
-  NotesGrid.updateDisplay;
-};
-
 export default NotesGrid;
+{
+}

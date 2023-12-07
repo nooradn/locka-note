@@ -9,10 +9,9 @@ import {
   Textarea,
   Flex,
   Spacer,
+  Text,
 } from "@chakra-ui/react";
 import allNotesData from "../data-all-notes.js";
-import NotesGrid, { displayyyyyyy } from "./NotesGrid.jsx";
-// import { updateNote } from "./NotesGrid.jsx";
 
 // Stateful component or class component
 class CreateNoteForm extends React.Component {
@@ -41,6 +40,7 @@ class CreateNoteForm extends React.Component {
 
   // Handler when clicked submit or 'Add note' button
   handleOnSubmitForm = () => {
+    const updateSharedNoteState = this.props.updateSharedNoteState;
     let uniqueNoteID = allNotesData[allNotesData.length - 1].id + 1;
     let uniqueNowTime = new Date().toISOString();
 
@@ -54,13 +54,17 @@ class CreateNoteForm extends React.Component {
         },
       }),
       () => {
-        allNotesData.push(this.state.formData);
-        console.log("new data", this.state.formData);
-        console.log("all data", allNotesData);
-        displayyyyyyy()
-        // updateDisplay()
-        // super.
-        // updateNote();
+        if (this.state.formData.title || this.state.formData.body) {
+          console.log("ada judul dan catatannya coy");
+          allNotesData.push(this.state.formData);
+          // console.log("new data", this.state.formData);
+          console.log("all data", allNotesData);
+          updateSharedNoteState();
+          this.isAlertShowed = false
+        } else {
+          this.isAlertShowed = true
+          updateSharedNoteState();
+        }
       }
     );
   };
@@ -93,6 +97,9 @@ class CreateNoteForm extends React.Component {
             onChange={this.handleInputOnChange}
           />
           <Flex>
+            <Center>
+              <Text color='red' paddingInline={1} hidden={!this.isAlertShowed}>Please fill any title/note first</Text>
+            </Center>
             <Spacer />
             <Button
               colorScheme="purple"
