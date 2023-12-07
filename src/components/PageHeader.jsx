@@ -1,20 +1,33 @@
 import React from "react";
-import { Flex, Spacer, Heading, Button, Center } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Heading,
+  Button,
+  Center,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
 import LogoIcon from "./LogoIcon";
+import { Search2Icon } from "@chakra-ui/icons";
 
 const PageHeader = () => {
   return (
     <Flex m={3} minWidth="max-content" alignItems="center" gap="2">
       <LogoIcon />
       <Spacer />
-      <Button
-        size="sm"
-        onClick={() =>
-          alert("Created by Noor Adn \nUsing Vite + React.js + Chakra UI")
-        }
-      >
-        About Us
-      </Button>
+      <Center>
+        <InputGroup>
+          <Input size="md" w={250} placeholder="Search note..."></Input>
+          <InputRightElement>
+          <Button size='sm' mr={1}>
+            <Search2Icon />
+
+          </Button>
+          </InputRightElement>
+        </InputGroup>
+      </Center>
     </Flex>
   );
 };

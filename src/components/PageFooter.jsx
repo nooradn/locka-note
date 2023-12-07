@@ -8,7 +8,10 @@ const PageFooter = () => {
       <Spacer />
       <VStack>
         <LogoIcon textColor="white" scale={1.5} isVertical={true}/>
-        <Text color="purple.500" fontSize="sm" mt={4}>
+        <Text color='rgba(255, 255, 255, 0.5)' mt={4}>
+        Created by Noor Adn Using Vite + React.js + Chakra UI
+        </Text>
+        <Text color="purple.500" fontSize="sm" >
           All Rights Reserved
         </Text>
       </VStack>
